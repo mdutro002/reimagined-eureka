@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 //put users routes here
+
 router.get('/new', (req, res) => {
-  res.send("This is where users sign up")
+  res.render("signup.ejs")
 })
 
 router.get('/view/:id', (req, res) => {
