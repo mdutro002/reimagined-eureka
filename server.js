@@ -32,7 +32,7 @@ app.use('/user', userCont);
 
 // ROUTES
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.render('index.ejs')
 })
 
 app.listen(PORT, () => {
