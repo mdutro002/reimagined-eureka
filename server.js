@@ -6,7 +6,7 @@ const app = express()
 const db = mongoose.connection
 require('dotenv').config()
 
-// PORT
+//PORT
 const PORT = process.env.PORT || 3333
 
 // DATABASE
@@ -23,10 +23,18 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false}))
 app.use(methodOverride('_method'))
 
-// routes
+//ROUTERS
+const campainCont = require('./controllers/campaigns.js');
+app.use('/campaigns', campainCont);
+
+const userCont = require('./controllers/users.js');
+app.use('/user', userCont);
+
+// ROUTES
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
 app.listen(PORT, () => {
   console.log('Listening on port:', PORT)
 })

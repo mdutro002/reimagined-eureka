@@ -46,3 +46,6 @@ Prepare to present!
 ---
 
 **Thursday:**  
+I had the idea to have characters be a complex object in the campaigns model, but I'm going to limit this to be an array for now. I am concerned about getting the mvp built in time if I throw in too many new issues, I'll spend my time on those instead of base functionality.   
+
+If I have time later on in the project week, I'll come back and work on that. Progress today was much slower than I'd like.
