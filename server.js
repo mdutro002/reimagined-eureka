@@ -24,8 +24,8 @@ app.use(express.urlencoded({ extended: false}))
 app.use(methodOverride('_method'))
 
 //ROUTERS
-const campainCont = require('./controllers/campaigns.js');
-app.use('/campaigns', campainCont);
+const campaignCont = require('./controllers/campaigns.js');
+app.use('/campaigns', campaignCont);
 
 const userCont = require('./controllers/users.js');
 app.use('/user', userCont);

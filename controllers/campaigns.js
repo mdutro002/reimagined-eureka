@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Campaigns = require('../models/campaigns.js');
 
 //put campaigns routes here
 

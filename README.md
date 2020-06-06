@@ -51,3 +51,11 @@ I had the idea to have characters be a complex object in the campaigns model, bu
 If I have time later on in the project week, I'll come back and work on that. Progress today was much slower than I'd like. I basically got the routes set up and that's it. Not proud. :(
 
 BUT. I think I needed a break, and I'm hoping to come at this tomorrow with some renewed focus, and hopefully get something more substantial done. Not to get all crossfit about it, but people are right - motivation is fleeting, and discipline is key.
+
+**Friday** 
+I ended up taking the whole day - bit of a late start to Saturday, but I expect that this was a big help for me.
+
+**Saturday**
+Heading into today still hoping to get all CRUD and Auth basics done. Honestly, should probably just aim for CRUD, but we'll see how it goes.
+
+I was spending so much time wondering how to do complex objects for the characters, I completely missed the fact that I'm going to have to account for the fact that each campaign is 'owned' by a user, and needs to have that reflected in the data. At least it's just one "many-to-one" relationship I need to account for at first. I wish I had made better use of the past two days, but there's no time like the present, I guess. 
