@@ -2,6 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Campaigns = require('../models/campaigns.js');
 
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next()
+  } else {
+    res.redirect(user/login)
+  }
+}
+
 //put campaigns routes here
 
 router.get('/new', (req, res) => {

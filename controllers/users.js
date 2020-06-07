@@ -14,7 +14,7 @@ router.get('/login', (req, res) => {
 })
 
 router.get('/view/:id', (req, res) => {
-  res.send("This is where you'd view an individual profile")
+  res.render('myCampaigns.ejs')
 })
 
 router.post('/signup', (req, res) => {
