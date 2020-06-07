@@ -58,4 +58,6 @@ I ended up taking the whole day - bit of a late start to Saturday, but I expect 
 **Saturday**
 Heading into today still hoping to get all CRUD and Auth basics done. Honestly, should probably just aim for CRUD, but we'll see how it goes.
 
-I was spending so much time wondering how to do complex objects for the characters, I completely missed the fact that I'm going to have to account for the fact that each campaign is 'owned' by a user, and needs to have that reflected in the data. At least it's just one "many-to-one" relationship I need to account for at first. I wish I had made better use of the past two days, but there's no time like the present, I guess. 
+I was spending so much time wondering how to do complex objects for the characters, I completely missed the fact that I'm going to have to account for the fact that each campaign is 'owned' by a user, and needs to have that reflected in the data. At least it's just one "many-to-one" relationship I need to account for at first. I wish I had made better use of the past two days, but there's no time like the present, I guess.
+
+Now that I've got items populating into the users category, I've got an idea of how to make sure I retain that many-to-one relationships between a user and their campaigns. But, I'm thinking now that instead of building the CRUDS and THEN going and building Auth, if I should build Auth and then finish Cruds. it feels like I'll have to shift around less in the end game. Especially since I'll be relying on those auth-session cookies to attribute the campaigns to the right user.

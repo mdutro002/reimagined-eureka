@@ -4,7 +4,7 @@ const campaignSchema = new mongoose.Schema(
   {
     nickName: {type: String, required: true},
     imgUrl: {type: String, default: "https://static.thenounproject.com/png/340719-200.png"},
-    characters: {type: Array},
+    characters: {type: Array, default: []},
     ownedBy: {type: String, required: true},
     viewable: {type: Boolean, required: true, default: true}
   }
