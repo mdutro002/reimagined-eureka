@@ -6,6 +6,13 @@
 <body>
   <%- include('./partials/nav.ejs') %>
   <h1>dungeonCore</h1>
-
+  <form action="/user/signup" method="POST">
+    <label for="name">User Name:</label>
+    <input type="text" name="username" required/>
+    <label for="color">Password:</label>
+    <input type="password" name="password" />
+    <br>
+    <input type="submit" value="Submit">
+  <form>
 </body>
 </html>
