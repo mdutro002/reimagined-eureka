@@ -7,17 +7,19 @@
   <%- include('./partials/nav.ejs') %>
   <h1>dungeonCore</h1>
 
-  <div>
-    <form name="">
-      <input type="hidden" name="ownedBy" value="">
-      <label for="nickName"> Campaign Name</label>
-      <input type="text" name="nickName">
-      <label for="imgUrl">Map Image URL</label>
-      <input type="text" name="imgUrl">
-      <label for="viewable">Viewable to others?</label>
-      <input name="viewable" type="checkbox">
-      <input type="submit" value="Submit">
-    </form>
+  <div class="formDiv">
+  <form name="addCampaign" method="POST" action="">
+    <input type="hidden" name="ownedBy" value="">
+    <label for="nickName">Campaign Name</label>
+    <input type="text" name="nickName">
+    <label for="imgUrl">URL for map image</label>
+    <input type="text" name="imgUrl">
+    <label for="chars">Please add comma separated list of characters</label>
+    <input type="text" name="chars">
+    <label for="viewable">Make campaign publicly visible?</label>
+    <input type="checkbox" name="viewable">
+    <input type="submit" value="Submit">
+  </form>
   </div>
 </body>
 </html>

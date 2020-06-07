@@ -11,9 +11,8 @@ const isAuthenticated = (req, res, next) => {
 }
 
 //put campaigns routes here
-
 router.get('/new', isAuthenticated, (req, res) => {
-  res.send('new campaign form here')
+  res.render('newCampaign.ejs')
 })
 
 router.get('/view', isAuthenticated, (req, res) => {
