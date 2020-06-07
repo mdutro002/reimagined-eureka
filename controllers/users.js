@@ -53,12 +53,29 @@ router.post('/signup', (req, res) => {
   })
 })
 
-router.post('/update', (req, res) => {
-  Users.findByIdAndUpdate(req.body.id)
+//updatePW
+router.post('/updatePW', (req, res) => {
+  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+  Users.findByIdAndUpdate({ _id: req.body.id}, { password: req.body.password}, (err, result) => {
+    if (err){
+      console.log(err);
+    } else {
+      res.redirect('/')
+    }
+  })
+})
+
+router.post('/updateName', (req, res) => {
+  Users.findByIdAndUpdate({ _id: req.body.id}, { username: req.body.username}, (err, result) => {
+    if (err){
+      console.log(err);
+    } else {
+      
+    }
+  })
 })
 
 //DELETE
-//needs to also delete current session
 router.delete('/delete', (req, res) => {
   Users.findByIdAndDelete(req.body.id, (err, deleted) => {
     if (err){
