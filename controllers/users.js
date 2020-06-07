@@ -3,7 +3,13 @@ const bcrypt = require('bcrypt')
 const router = express.Router();
 const Users = require('../models/users.js');
 
-//put users routes here
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next()
+  } else {
+    res.redirect(user/login)
+  }
+}
 
 router.get('/signup', (req, res) => {
   res.render("signup.ejs")
@@ -13,7 +19,7 @@ router.get('/login', (req, res) => {
   res.render("login.ejs")
 })
 
-router.get('/view/:id', (req, res) => {
+router.get('/view/:id',  isAuthenticated, (req, res) => {
   res.render('myCampaigns.ejs')
 })
 
