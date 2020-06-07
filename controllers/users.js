@@ -23,9 +23,19 @@ router.get('/login', (req, res) => {
 })
 
 router.get('/myAccount',  isAuthenticated, (req, res) => {
-  res.render('myAccount.ejs', {
-    thisUser: req.session.currentUser
-  })
+  res.render('myAccount.ejs', 
+    {
+      thisUser: req.session.currentUser
+    }
+  );
+})
+
+router.get('/myCampaigns', isAuthenticated, (req, res) => {
+  res.render('myCampaigns.ejs', 
+    {
+      thisUser: req.sessions.currentUser
+    }
+  );
 })
 
 
@@ -45,6 +55,17 @@ router.post('/signup', (req, res) => {
 
 router.post('/update', (req, res) => {
   Users.findByIdAndUpdate()
+})
+
+//DELETE
+router.delete('/delete', (req, res) => {
+  Users.findByIdAndDelete(req.body._id, (err, deleted) => {
+    if (err){
+      res.send(err)
+    } else {
+      redirect('/')
+    }
+  })
 })
 
 module.exports = router
