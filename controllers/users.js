@@ -22,6 +22,12 @@ router.get('/login', (req, res) => {
   res.render("login.ejs")
 })
 
+router.get('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/')
+  })
+})
+
 router.get('/myAccount',  isAuthenticated, (req, res) => {
   res.render('myAccount.ejs', 
     {
