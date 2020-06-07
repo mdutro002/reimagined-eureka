@@ -10,6 +10,24 @@ const isAuthenticated = (req, res, next) => {
   }
 }
 
+//POST REQUESTS
+router.post('/new/add', (req, res) => {
+  if (req.body.viewable === 'on'){
+    req.body.viewable = true;
+  } else {
+    req.body.viewable = false;
+  }
+  req.body.chars = req.body.chars.split(',')
+  Campaigns.create(req.body, (err, addition) => {
+    if (err){
+      console.log(err)
+    } else {
+      console.log(addition)
+      res.redirect('/')
+    }
+  }) 
+})
+
 //GET REQUESTS
 router.get('/new', isAuthenticated, (req, res) => {
   res.render('newCampaign.ejs', 
@@ -25,19 +43,6 @@ router.get('/view', isAuthenticated, (req, res) => {
 
 router.get('/edit', isAuthenticated, (req, res) => {
   res.send('edit campaign details here')
-})
-
-//POST REQUESTS
-router.post('/campaigns/new/add', (req, res) => {
-  req.body.chars = req.body.chars.split(',')
-  Campaigns.create(req.body, (err, addition) => {
-    if (err){
-      console.log(err)
-    } else {
-      console.log(addition)
-      res.redirect('/')
-    }
-  })
 })
 
 module.exports = router
