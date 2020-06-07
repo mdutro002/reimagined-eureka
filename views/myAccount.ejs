@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head.ejs') %> <!-- Everything in this is running as expected, except the style sheets. DEBUG -->
+</head>
+<body>
+  <%- include('./partials/nav.ejs') %>
+  <h1>dungeonCore</h1>
+    <%=thisUser%>
+  <div id="formDiv">
+    <form>
+      <input type="text" name="username" value="<%=thisUser.username%>">
+      <input type="text" name="password" value="<%=thisUser.password%>">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

@@ -1,5 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt')
+const session = require('express-session')
 const router = express.Router();
 const Users = require('../models/users.js');
 
@@ -20,7 +21,9 @@ router.get('/login', (req, res) => {
 })
 
 router.get('/myAccount',  isAuthenticated, (req, res) => {
-  res.render('myCampaigns.ejs')
+  res.render('myCampaigns.ejs', {
+    thisUser: req.session.currentUser
+  })
 })
 
 router.post('/signup', (req, res) => {
