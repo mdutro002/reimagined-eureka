@@ -24,7 +24,7 @@
     </div>
     <div class="formDiv">
         <form name="delete" action="/user/delete?_method=DELETE" method="POST">
-          <input type="hidden" name="id" value="<%thisUser._id%> ">
+          <input type="hidden" name="id" value="<%=thisUser._id%>">
           <input type="submit" value="Delete Account">
         </form>
       </div>

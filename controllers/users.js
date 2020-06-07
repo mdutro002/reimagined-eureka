@@ -54,15 +54,16 @@ router.post('/signup', (req, res) => {
 })
 
 router.post('/update', (req, res) => {
-  Users.findByIdAndUpdate()
+  Users.findByIdAndUpdate(req.body.id)
 })
 
 //DELETE
 //this is running, but isn't deleting from the DB
 router.delete('/delete', (req, res) => {
-  Users.findByIdAndDelete(req.body.thisUser_id, (err, deleted) => {
+  Users.findByIdAndDelete(req.body.id, (err, deleted) => {
     if (err){
       res.send(err)
+      console.log(err)
     } else {
       res.redirect('/')
     }
