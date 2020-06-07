@@ -7,17 +7,17 @@
   <%- include('./partials/nav.ejs') %>
   <h1>dungeonCore</h1>
   <div class="formDiv">
-    <form name="changeUsername" method="POST">
+    <form name="changeUsername" action="/user/updateName" method="POST">
       <p>Change Username</p>
-      <input type="hidden" name="id" value="<%=thisUser._id%> ">
+      <input type="hidden" name="id" value="<%=thisUser._id%>">
       <input type="text" name="username" value="<%=thisUser.username%>">
       <input type="submit" value="Submit">
     </form>
   </div>
   <div class="formDiv">
-      <form name="changePassword" method="POST" action="/user/updatePW?_method=POST">
+      <form name="changePassword" method="POST" action="/user/updatePW">
         <p>Change Password</p>
-        <input type="hidden" name="id" value="<%=thisUser._id%> ">
+        <input type="hidden" name="id" value="<%=thisUser._id%>">
         <input type="text" name="password">
         <input type="submit" value="Submit">
       </form>

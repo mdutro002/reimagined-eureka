@@ -48,7 +48,7 @@ router.post('/signup', (req, res) => {
       res.send('There was an an error - please try to create your account again')
     } else {
       console.log('user is created', createdUser)
-      res.redirect('/')
+      res.redirect('/user/login')
     }
   })
 })
@@ -60,7 +60,9 @@ router.post('/updatePW', (req, res) => {
     if (err){
       console.log(err);
     } else {
-      res.redirect('/')
+      req.session.destroy(() => {
+        res.redirect('/user/myCampaigns')
+      })
     }
   })
 })
@@ -70,7 +72,9 @@ router.post('/updateName', (req, res) => {
     if (err){
       console.log(err);
     } else {
-      
+      req.session.destroy(() => {
+        res.redirect('/user/myCampaigns')
+      })
     }
   })
 })
