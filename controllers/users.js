@@ -12,6 +12,8 @@ const isAuthenticated = (req, res, next) => {
   }
 }
 
+
+//GET REQUESTS
 router.get('/signup', (req, res) => {
   res.render("signup.ejs")
 })
@@ -26,6 +28,8 @@ router.get('/myAccount',  isAuthenticated, (req, res) => {
   })
 })
 
+
+//POST REQUESTS
 router.post('/signup', (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
   Users.create(req.body, (err, createdUser) => {
@@ -37,6 +41,10 @@ router.post('/signup', (req, res) => {
       res.redirect('/')
     }
   })
+})
+
+router.post('/update', (req, res) => {
+  Users.findByIdAndUpdate()
 })
 
 module.exports = router
