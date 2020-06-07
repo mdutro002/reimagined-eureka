@@ -61,3 +61,9 @@ Heading into today still hoping to get all CRUD and Auth basics done. Honestly, 
 I was spending so much time wondering how to do complex objects for the characters, I completely missed the fact that I'm going to have to account for the fact that each campaign is 'owned' by a user, and needs to have that reflected in the data. At least it's just one "many-to-one" relationship I need to account for at first. I wish I had made better use of the past two days, but there's no time like the present, I guess.
 
 Now that I've got items populating into the users category, I've got an idea of how to make sure I retain that many-to-one relationships between a user and their campaigns. But, I'm thinking now that instead of building the CRUDS and THEN going and building Auth, if I should build Auth and then finish Cruds. it feels like I'll have to shift around less in the end game. Especially since I'll be relying on those auth-session cookies to attribute the campaigns to the right user.
+
+It took quite a bit of time, but I was able to get Auth working. There's still some debugging to do on that front, but nothing I'm terribly worried about. I'll need to add logout function to close the session, and make sure things aren't ending prematurely. But, noone can access routes they shouldn't have access to. I was about to begin on the create campaign methods, but I need sleep. 
+
+What surprised me today was that I was able to get a significant bit of work done, even though I had some false starts. Things in the planning phase definitely weren't as fleshed out as they could have been. I'll work to make sure that tomorrow I have both sets of CRUD's working - for users and for campaigns. Right now I'm anticipating that the Update campaign method will be a bit tricky - I'll have to finally deal with complex objects in MongoDB and I'm not looking forward to it. But, ever forward!
+
+**Sunday**
