@@ -7,7 +7,7 @@ const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
     return next()
   } else {
-    res.redirect(user/login)
+    res.redirect('/user/login')
   }
 }
 
@@ -19,7 +19,7 @@ router.get('/login', (req, res) => {
   res.render("login.ejs")
 })
 
-router.get('/view/:id',  isAuthenticated, (req, res) => {
+router.get('/myAccount',  isAuthenticated, (req, res) => {
   res.render('myCampaigns.ejs')
 })
 
