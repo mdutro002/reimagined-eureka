@@ -21,7 +21,7 @@ router.get('/login', (req, res) => {
 })
 
 router.get('/myAccount',  isAuthenticated, (req, res) => {
-  res.render('myCampaigns.ejs', {
+  res.render('myAccount.ejs', {
     thisUser: req.session.currentUser
   })
 })
