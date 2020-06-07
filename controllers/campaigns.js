@@ -10,9 +10,13 @@ const isAuthenticated = (req, res, next) => {
   }
 }
 
-//put campaigns routes here
+//GET REQUESTS
 router.get('/new', isAuthenticated, (req, res) => {
-  res.render('newCampaign.ejs')
+  res.render('newCampaign.ejs', 
+    {
+      thisUser: req.session.currentUser
+    }
+  )
 })
 
 router.get('/view', isAuthenticated, (req, res) => {
@@ -21,6 +25,19 @@ router.get('/view', isAuthenticated, (req, res) => {
 
 router.get('/edit', isAuthenticated, (req, res) => {
   res.send('edit campaign details here')
+})
+
+//POST REQUESTS
+router.post('/campaigns/new/add', (req, res) => {
+  req.body.chars = req.body.chars.split(',')
+  Campaigns.create(req.body, (err, addition) => {
+    if (err){
+      console.log(err)
+    } else {
+      console.log(addition)
+      res.redirect('/')
+    }
+  })
 })
 
 module.exports = router
