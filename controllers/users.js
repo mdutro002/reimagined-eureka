@@ -58,14 +58,16 @@ router.post('/update', (req, res) => {
 })
 
 //DELETE
-//this is running, but isn't deleting from the DB
+//needs to also delete current session
 router.delete('/delete', (req, res) => {
   Users.findByIdAndDelete(req.body.id, (err, deleted) => {
     if (err){
       res.send(err)
       console.log(err)
     } else {
-      res.redirect('/')
+      req.session.destroy(() => {
+        res.redirect('/')
+      })
     }
   })
 })
