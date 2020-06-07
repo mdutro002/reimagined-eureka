@@ -30,3 +30,9 @@ sessions.post('/', (req, res) => {
     }
   })
 })
+
+sessions.delete('/', (req, res) => {
+  res.send('deleting session')
+})
+
+module.exports = sessions;

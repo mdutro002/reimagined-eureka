@@ -24,7 +24,9 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false}))
 app.use(methodOverride('_method'))
 app.use(session({
-  secret: process.env.SECRET
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: false
 }))
 
 //ROUTERS
@@ -34,7 +36,7 @@ app.use('/campaigns', campaignCont);
 const userCont = require('./controllers/users.js');
 app.use('/user', userCont);
 
-const sessionsCont = require('./controllers/sessions_controller.js')
+const sessionsCont = require('./controllers/sessions.js')
 app.use('/sessions', sessionsCont)
 
 // ROUTES
