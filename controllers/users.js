@@ -33,7 +33,7 @@ router.get('/myAccount',  isAuthenticated, (req, res) => {
 router.get('/myCampaigns', isAuthenticated, (req, res) => {
   res.render('myCampaigns.ejs', 
     {
-      thisUser: req.sessions.currentUser
+      thisUser: req.session.currentUser
     }
   );
 })
@@ -58,12 +58,13 @@ router.post('/update', (req, res) => {
 })
 
 //DELETE
+//this is running, but isn't deleting from the DB
 router.delete('/delete', (req, res) => {
-  Users.findByIdAndDelete(req.body._id, (err, deleted) => {
+  Users.findByIdAndDelete(req.body.thisUser_id, (err, deleted) => {
     if (err){
       res.send(err)
     } else {
-      redirect('/')
+      res.redirect('/')
     }
   })
 })
