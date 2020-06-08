@@ -68,3 +68,6 @@ What surprised me today was that I was able to get a significant bit of work don
 
 **Sunday**
 Oh man - got a lot of good stuff done today. There's still bugs to be worked through, but both campaigns and users are writing to the database, the user account can be edited fully, the campaigns are associated by an ownedBy field in the document, and the campaigns can be created no problem. Unfortunately, there's a pernicious bug with the array type that I had set up in campaign model, so I'm going to have to do more testing of that tomorrow. I'm going to try and get an earlier start tomorrow so I can hopefully get even more done. But I think I'm in good shape for the rest of the time leading up to Wednesday. My biggest bug outside of function that I'm dealing with right now is the fact that I haven't been able to apply styles to any of my pages using the partial. But that's a problem for late Monday/Tuesday
+
+**Monday**
+Current plan for today is to get all functionality debugged and ready for presentation day. The current remaining work includes Editing and Deleting campaigns and doing the last two major debugs - which is makeing sure styling works in the partials and making sure the array type for Campaigns  is working.
