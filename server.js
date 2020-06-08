@@ -3,6 +3,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const session = require('express-session')
+const Campaigns = require('./models/campaigns.js')
 const app = express()
 const db = mongoose.connection
 require('dotenv').config()
@@ -41,7 +42,13 @@ app.use('/sessions', sessionsCont)
 
 // ROUTES
 app.get('/', (req, res) => {
-  res.render('index.ejs')
+  Campaigns.find({viewable: true}, (err, allCamps) => {
+    res.render('index.ejs', 
+      {
+        allData : allCamps
+      }
+    )
+  })
 })
 
 app.listen(PORT, () => {

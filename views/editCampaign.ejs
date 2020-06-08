@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head.ejs') %> <!-- Everything in this is running as expected, except the style sheets. DEBUG -->
+</head>
+<body>
+  <%- include('./partials/nav.ejs') %>
+  <h1>dungeonCore</h1>
+
+  <div class="formDiv">
+    <form name="addCampaign" action="/campaigns/new/add?_method=POST" method="POST">
+      <input type="hidden" name="ownedBy" value="<%=thisUser._id%>">
+      <label for="nickName">Campaign Name</label>
+      <input type="text" name="nickName">
+      <label for="imgUrl">URL for map image</label>
+      <input type="text" name="imgUrl">
+      <label for="chars">Please add comma separated list of characters</label>
+      <input type="text" name="chars">
+      <label for="viewable">Make campaign publicly visible?</label>
+      <input type="checkbox" name="viewable">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
