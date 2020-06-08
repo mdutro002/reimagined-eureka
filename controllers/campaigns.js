@@ -19,12 +19,7 @@ router.post('/new/add', (req, res) => {
     req.body.viewable = false;
   }
   console.log(req.body.chars)
-  Campaigns.create(
-    {ownedBy: req.body.ownedBy},
-    {chars: req.body.chars},
-    {viewable: req.body.viewable},
-    {nickName: req.body.nickName},
-    {imgUrl: req.body.imgUrl}, (err, addition) => {
+  Campaigns.create(req.body, (err, addition) => {
     if (err){
       console.log(err)
     } else {
