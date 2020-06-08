@@ -9,7 +9,14 @@
 
   <a href="/campaigns/new"><button>Create Campaign</button></a>
   <div id="campaignDisplay">
-    <!--  -->
+    <% for (campaign in Campaigns) {
+    %>  
+    <h4><%=Campaigns[campaign].nickName%></h4>
+    <img src="<%=Campaigns[campaign].imgUrl%>">
+    <p></p>
+    <%
+    } %>
+    
   </div>
 </body>
 </html>

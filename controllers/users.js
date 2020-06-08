@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const session = require('express-session')
 const router = express.Router();
 const Users = require('../models/users.js');
+const Campaigns = require('../models/campaigns.js')
 
 const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
@@ -37,11 +38,14 @@ router.get('/myAccount',  isAuthenticated, (req, res) => {
 })
 
 router.get('/myCampaigns', isAuthenticated, (req, res) => {
-  res.render('myCampaigns.ejs', 
-    {
-      thisUser: req.session.currentUser
-    }
-  );
+  Campaigns.find({ownedBy: req.session.currentUser._id}, (err, campQ) => {
+    res.render('myCampaigns.ejs', 
+      {
+        thisUser: req.session.currentUser,
+        Campaigns: campQ
+      }
+    ); 
+  })
 })
 
 

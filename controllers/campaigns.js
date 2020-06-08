@@ -39,7 +39,12 @@ router.get('/new', isAuthenticated, (req, res) => {
 })
 
 router.get('/view', isAuthenticated, (req, res) => {
-  res.send('view campaign details here')
+  res.render('view.ejs', 
+    {
+      thisUser: req.session.currentUser,
+      userCampaign: req.session.currentUser
+    }
+  )
 })
 
 router.get('/edit', isAuthenticated, (req, res) => {
