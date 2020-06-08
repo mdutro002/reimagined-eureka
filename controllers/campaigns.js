@@ -12,12 +12,13 @@ const isAuthenticated = (req, res, next) => {
 
 //POST REQUESTS
 router.post('/new/add', (req, res) => {
+  console.log(req.body.chars)
   if (req.body.viewable === 'on'){
     req.body.viewable = true;
   } else {
     req.body.viewable = false;
   }
-  req.body.chars = req.body.chars.split(',')
+  console.log(req.body.chars)
   Campaigns.create(req.body, (err, addition) => {
     if (err){
       console.log(err)
