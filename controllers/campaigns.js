@@ -19,6 +19,7 @@ router.post('/new/add', (req, res) => {
     req.body.viewable = false;
   }
   console.log(req.body.chars)
+  req.body.chars = req.body.chars.split(',')
   Campaigns.create(req.body, (err, addition) => {
     if (err){
       console.log(err)
@@ -38,7 +39,7 @@ router.get('/new', isAuthenticated, (req, res) => {
   )
 })
 
-router.get('/view', isAuthenticated, (req, res) => {
+router.get('/view/:id', isAuthenticated, (req, res) => {
   res.render('view.ejs', 
     {
       thisUser: req.session.currentUser,
