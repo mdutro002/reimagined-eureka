@@ -11,7 +11,7 @@
   <div id="campaignDisplay">
     <% for (campaign in Campaigns) {
     %>  
-    <h4><%=Campaigns[campaign].nickName%></h4>
+    <a href="/campaigns/view/<%=Campaigns[campaign]._id%>"><h4><%=Campaigns[campaign].nickName%></h4></a>
     <img src="<%=Campaigns[campaign].imgUrl%>">
     <p></p>
     <a href="/campaigns/edit/<%=Campaigns[campaign]._id%>"><button>Edit</button></a>

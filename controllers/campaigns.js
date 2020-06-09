@@ -32,11 +32,14 @@ router.post('/new/add', (req, res) => {
   }) 
 })
 
+router.post('/edit/:id')
+
 //GET REQUESTS
 router.get('/new', isAuthenticated, (req, res) => {
   res.render('newCampaign.ejs', 
     {
-      thisUser: req.session.currentUser
+      thisUser: req.session.currentUser,
+      loggedIn: req.session.currentUser,
     }
   )
 })
@@ -45,13 +48,20 @@ router.get('/view/:id', isAuthenticated, (req, res) => {
   res.render('view.ejs', 
     {
       thisUser: req.session.currentUser,
-      userCampaign: req.session.currentUser
+      loggedIn: req.session.currentUser,
+      userCampaign: req.params.id
     }
   )
 })
 
-router.get('/edit', isAuthenticated, (req, res) => {
-  res.send('edit campaign details here')
+router.get('/edit/:id', isAuthenticated, (req, res) => {
+  res.render('editCampaign.ejs',
+    {
+      thisUser: req.session.currentUser,
+      loggedIn: req.session.currentUser,
+      userCampaign: req.params.id
+    }
+  )
 })
 
 module.exports = router
