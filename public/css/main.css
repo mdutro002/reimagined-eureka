@@ -13,7 +13,7 @@ font-family: 'Metal Mania', cursive;
 
 /* SEMANTIC TAGS */
 body {
-  background-color: var(--cafe-noir);
+  background-image: url('https://images.pexels.com/photos/2463349/pexels-photo-2463349.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
   color: white;
 }
 
@@ -54,3 +54,24 @@ a{
   justify-self: flex-end;
 }
 
+#mainCampaigns{
+  border: solid 1px var(--raisin-black);
+  border-radius: 5px;
+  background-color: var(--cafe-noir);
+  margin: 10px;
+  height: 80vh;
+}
+
+.campaignDiv{
+  background-color: whitesmoke;
+  border-radius: 5px;
+  width: 200px;
+  height: 250px;
+  margin: 15px;
+  color: black;
+}
+
+.campaignDiv img{
+  max-width: 100px;
+  max-height: 100px;
+}

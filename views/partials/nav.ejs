@@ -10,9 +10,20 @@
   </div>
 
   <div id="alignRight">
-    <a href="/">Home</a>
-    <a href="/user/myAccount">My Account</a>
-    <a href="/user/myCampaigns">My Campaigns</a>
+    <% if (loggedIn){
+      %> 
+        <a href="/user/myAccount">My Account</a>
+        <a href="/user/myCampaigns">My Campaigns</a>
+        <a href="/">Home</a>
+      <%
+    } else if (!loggedIn){
+      %>
+      <a href="/">Home</a>
+      <%
+    }
+    %>
+    
+
   </div>
 </nav> 
 <br>

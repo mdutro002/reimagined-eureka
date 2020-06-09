@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Campaigns = require('../models/campaigns.js');
 
-express().use('./public', express.static('public'))
+express().use('../public', express.static('public'))
 
 const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
