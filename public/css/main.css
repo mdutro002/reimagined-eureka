@@ -1,5 +1,38 @@
-body {
-  background-color: blue;
-  color: white;
-  font-family: 'Courier New', monospace;
+:root{
+--raisin-black: #242331ff;
+--kombu-green: #373d20ff;
+--spanish-bistre: #717744ff;
+--camel: #b38a58ff;
+--cafe-noir: #533e2dff;
 }
+
+/* FONTS
+font-family: 'UnifrakturMaguntia', cursive;
+font-family: 'Metal Mania', cursive;
+*/
+
+/* SEMANTIC TAGS */
+body {
+  background-color: var(--cafe-noir);
+  color: white;
+}
+
+nav {
+  background-color: var(--camel);
+  display: flex;
+  justify-content: space-between;
+}
+
+h1{
+  font-family: 'Metal Mania', monospace;
+  font-weight: 300;
+}
+
+a{
+  font-family: 'Metal Mania', sans-serif;
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+}
+
+/* CLASSES AND IDS */
