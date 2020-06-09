@@ -5,6 +5,8 @@ const router = express.Router();
 const Users = require('../models/users.js');
 const Campaigns = require('../models/campaigns.js')
 
+express().use('./public', express.static('./public'))
+
 const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
     return next()
@@ -13,14 +15,21 @@ const isAuthenticated = (req, res, next) => {
   }
 }
 
-
 //GET REQUESTS
 router.get('/signup', (req, res) => {
-  res.render("signup.ejs")
+  res.render("signup.ejs",
+    {
+      loggedIn: req.session.currentUser
+    }
+  )
 })
 
 router.get('/login', (req, res) => {
-  res.render("login.ejs")
+  res.render("login.ejs", 
+    {
+      loggedIn: req.session.currentUser
+    }
+  )
 })
 
 router.get('/logout', (req, res) => {
@@ -32,7 +41,8 @@ router.get('/logout', (req, res) => {
 router.get('/myAccount',  isAuthenticated, (req, res) => {
   res.render('myAccount.ejs', 
     {
-      thisUser: req.session.currentUser
+      thisUser: req.session.currentUser,
+      loggedIn: req.session.currentUser
     }
   );
 })
@@ -42,7 +52,8 @@ router.get('/myCampaigns', isAuthenticated, (req, res) => {
     res.render('myCampaigns.ejs', 
       {
         thisUser: req.session.currentUser,
-        Campaigns: campQ
+        Campaigns: campQ,
+        loggedIn: req.session.currentUser
       }
     ); 
   })

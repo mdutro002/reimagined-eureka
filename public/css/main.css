@@ -18,12 +18,21 @@ body {
 }
 
 nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: var(--camel);
   display: flex;
+  font-size: large;
   justify-content: space-between;
 }
 
+nav div a{
+  padding: 15px;
+}
+
 h1{
+  margin-left: 50px;
+  margin-top: 0;
   font-family: 'Metal Mania', monospace;
   font-weight: 300;
 }
@@ -36,3 +45,12 @@ a{
 }
 
 /* CLASSES AND IDS */
+
+#alignLeft{
+  justify-self: flex-start;
+}
+
+#alignRight{
+  justify-self: flex-end;
+}
+

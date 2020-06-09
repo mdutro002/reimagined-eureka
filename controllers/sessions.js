@@ -3,6 +3,7 @@ const express = require('express')
 const sessions = express.Router();
 const User = require('../models/users.js')
 
+express().use(express.static('./public'))
 
 //login
 sessions.post('/', (req, res) => {

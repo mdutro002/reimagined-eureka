@@ -46,7 +46,8 @@ app.get('/', (req, res) => {
   Campaigns.find({viewable: true}, (err, allCamps) => {
     res.render('index.ejs', 
       {
-        allData : allCamps
+        allData : allCamps,
+        loggedIn: req.session.currentUser
       }
     )
   })
