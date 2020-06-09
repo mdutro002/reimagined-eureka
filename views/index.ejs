@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
   <%- include('./partials/head.ejs') %> <!-- Everything in this is running as expected, except the style sheets. DEBUG -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../public/css/main.css">
 </head>
 <body>
   <%- include('./partials/nav.ejs') %>
   <h1>dungeonCore</h1>
-  <div id="">
+  <div id="mainCampaigns">
     <!-- Put all campaigns with viewable checked here -->
+  <% for (data in allData){
+    %><div class="campaignDiv">
+      <p><%=allData[data].nickName%></p>
+    </div><%
+  }%>
   </div>
 </body>
 </html>

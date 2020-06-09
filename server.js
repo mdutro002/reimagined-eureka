@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const session = require('express-session')
 const Campaigns = require('./models/campaigns.js')
+
 const app = express()
 const db = mongoose.connection
 require('dotenv').config()
@@ -21,8 +22,8 @@ db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 //MIDDLEWARE
-app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false}))
+app.use(express.static('public'))
 app.use(methodOverride('_method'))
 app.use(session({
   secret: process.env.SECRET,

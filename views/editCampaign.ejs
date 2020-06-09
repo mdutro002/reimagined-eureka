@@ -8,18 +8,27 @@
   <h1>dungeonCore</h1>
 
   <div class="formDiv">
-    <form name="addCampaign" action="/campaigns/new/add?_method=POST" method="POST">
+    <form name="addCampaign" action="/campaigns/edit/<%=thisCampaign._id%>?_method=POST" method="POST">
       <input type="hidden" name="ownedBy" value="<%=thisUser._id%>">
       <label for="nickName">Campaign Name</label>
-      <input type="text" name="nickName">
+      <input type="text" name="nickName" value="<%=thisCampaign._id%>">
       <label for="imgUrl">URL for map image</label>
-      <input type="text" name="imgUrl">
-      <label for="chars">Please add comma separated list of characters</label>
-      <input type="text" name="chars">
+      <input type="text" name="imgUrl" value="<%=thisCampaign.imgUrl%>">
       <label for="viewable">Make campaign publicly visible?</label>
-      <input type="checkbox" name="viewable">
+      <input type="checkbox" name="viewable" value="<%=thisCampaign._id%>">
       <input type="submit" value="Submit">
     </form>
+  </div>
+  <div class="formDiv">
+    <!-- Edit Chars in Here -->
+  <% if (thisCampaign.chars.len > 0) {
+    %><ul><%
+    <%  for (char in thisCampaign.chars){
+        %><li>thisCampaign.chars[char]</li><%
+    }%>
+    %></ul><%
+  }%>
+
   </div>
 </body>
 </html>
