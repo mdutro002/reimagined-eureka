@@ -71,3 +71,14 @@ Oh man - got a lot of good stuff done today. There's still bugs to be worked thr
 
 **Monday**
 Current plan for today is to get all functionality debugged and ready for presentation day. The current remaining work includes Editing and Deleting campaigns and doing the last two major debugs - which is making sure styling works in the partials and making sure the array type for Campaigns is working.
+
+-
+
+Some big wins, and some annoying setbacks today. Had some bugs that were really difficult to work through, so I don't -technically- have edit working on campaigns, but I know I'll have that set for tomorrow. The good news is the data write to Atlas is working, and the CSS is rendering on all pages as it should. I'm positive by the end of tomorrow I'll be more than ready for presentations. 
+
+**Tuesday**
+
+
+
+> end of build diary
+---
