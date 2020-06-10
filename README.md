@@ -2,12 +2,27 @@
 While it's probably also a genre of metal, in this case dungeonCore is a lightweight web app to manage DnD campaigns.
 Use it to track how many sessions you have going, see what characters are in play, and view the maps you're using. 
 
+https://quiet-cove-97838.herokuapp.com/
+
 ***
 
 ### Features
 -Create, View, Edit, and Delete your campaigns with impunity  
 -Secured login  
 -Show off your campaigns on the homepage - or not!  
+
+### Technologies Used
+* Node.js
+* Express
+* EJS
+* Normalize.css
+
+### Unsolved Problems
+
+- Username uniqueness is not enforced
+- If you try and access a page without auth, you don't get redirected BACK to that page after login
+- Code is not dry, could use more organization
+- On sign up, you are immediately directed to login
 
 ***
 
@@ -84,3 +99,4 @@ If I have any leftover time, I'll work on seeing what it would take to implement
 
 > end of build diary
 ---
+
