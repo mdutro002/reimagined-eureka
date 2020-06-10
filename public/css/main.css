@@ -22,7 +22,7 @@ body {
 nav {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: var(--camel);
+  background-color: var(--spanish-bistre);
   display: flex;
   font-size: large;
   justify-content: space-between;
@@ -60,7 +60,7 @@ a{
 #mainCampaigns{
   border: solid 1px var(--raisin-black);
   border-radius: 5px;
-  background-color: var(--cafe-noir);
+  background-color: var(--kombu-green);
   margin: 10px;
   height: 80vh;
   display: flex;
@@ -133,4 +133,27 @@ a{
   color: red;
   background-color: white;
   border: solid 1px red;
+}
+
+.displayCampaigns{
+  border: solid 1px var(--raisin-black);
+  border-radius: 5px;
+  background-color: var(--kombu-green);
+  margin: 10px;
+  height: 80vh;
+}
+
+.displayCampaigns a{
+  margin: 20px;
+  color: black;
+}
+
+.displayCampaigns button{
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+#campaignDisplay {
+  display: flex;
+  flex-wrap: wrap;
 }
