@@ -102,15 +102,21 @@ router.post('/updateName', (req, res) => {
 
 //DELETE
 router.delete('/delete', (req, res) => {
-  Users.findByIdAndDelete(req.body.id, (err, deleted) => {
+  Campaigns.deleteMany({ownedBy: req.body.id}, (err, deletedC) => {
     if (err){
       res.send(err)
       console.log(err)
-    } else {
-      req.session.destroy(() => {
-        res.redirect('/')
-      })
     }
+    Users.findByIdAndDelete(req.body.id, (err, deleted) => {
+      if (err){
+        res.send(err)
+        console.log(err)
+      } else {
+        req.session.destroy(() => {
+          res.redirect('/')
+        })
+      }
+    })
   })
 })
 

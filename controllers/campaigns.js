@@ -18,13 +18,14 @@ const isAuthenticated = (req, res, next) => {
 
 //POST REQUESTS
 router.post('/new/add', (req, res) => {
-  console.log(req.body.chars)
   if (req.body.viewable === 'on'){
     req.body.viewable = true;
   } else {
     req.body.viewable = false;
   }
-  console.log(req.body.chars)
+  if (req.body.imgUrl === ""){
+    req.body.imgUrl = "https://static.thenounproject.com/png/340719-200.png"
+  }
   req.body.chars = req.body.chars.split(',')
   Campaigns.create(req.body, (err, addition) => {
     if (err){
@@ -37,14 +38,17 @@ router.post('/new/add', (req, res) => {
 })
 
 router.post('/edit/:id', (req, res) => {
-  console.log(req.body.chars)
+  //data sanitation
   if (req.body.viewable === 'on'){
     req.body.viewable = true;
   } else {
     req.body.viewable = false;
   }
-  console.log(req.body.chars)
+  if (req.body.imgUrl === ""){
+    req.body.imgUrl = "https://static.thenounproject.com/png/340719-200.png"
+  }
   req.body.chars = req.body.chars.split(',')
+  //data update
   Campaigns.findByIdAndUpdate(
     { _id: req.params.id}, 
     {$set:  {nickName: req.body.nickName, imgUrl: req.body.imgUrl, chars: req.body.chars, viewable: req.body.viewable} },
@@ -90,6 +94,13 @@ router.get('/edit/:id', isAuthenticated, (req, res) => {
     )
   })
 
+})
+
+//DELETE REQUESTS
+router.delete('/delete/:id', (req, res) => {
+  Campaigns.findByIdAndDelete(req.params.id, (err, deleted) => {
+    res.redirect('/user/myCampaigns')
+  })
 })
 
 module.exports = router

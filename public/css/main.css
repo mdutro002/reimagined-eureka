@@ -63,6 +63,8 @@ a{
   background-color: var(--cafe-noir);
   margin: 10px;
   height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .campaignDiv{
@@ -121,4 +123,14 @@ a{
   background-color: var(--raisin-black);
   color: white;
   width: 40%;
+}
+
+.acctForm{
+  height: 60vh;
+}
+
+.acctForm input[value="Delete Account"]{
+  color: red;
+  background-color: white;
+  border: solid 1px red;
 }

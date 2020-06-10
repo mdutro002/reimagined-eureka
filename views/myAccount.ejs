@@ -5,28 +5,23 @@
 </head>
 <body>
   <%- include('./partials/nav.ejs') %>
-  <h1>dungeonCore</h1>
-  <div class="formDiv">
+  <div class="formDiv acctForm">
     <form name="changeUsername" action="/user/updateName" method="POST">
       <p>Change Username</p>
       <input type="hidden" name="id" value="<%=thisUser._id%>">
       <input type="text" name="username" value="<%=thisUser.username%>">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Change Username">
     </form>
-  </div>
-  <div class="formDiv">
-      <form name="changePassword" method="POST" action="/user/updatePW">
-        <p>Change Password</p>
+    <form name="changePassword" method="POST" action="/user/updatePW">
+      <p>Change Password</p>
+      <input type="hidden" name="id" value="<%=thisUser._id%>">
+      <input type="text" name="password">
+      <input type="submit" value="Change Password">
+    </form>
+      <form name="delete" action="/user/delete?_method=DELETE" method="POST">
         <input type="hidden" name="id" value="<%=thisUser._id%>">
-        <input type="text" name="password">
-        <input type="submit" value="Submit">
+        <input type="submit" value="Delete Account">
       </form>
     </div>
-    <div class="formDiv">
-        <form name="delete" action="/user/delete?_method=DELETE" method="POST">
-          <input type="hidden" name="id" value="<%=thisUser._id%>">
-          <input type="submit" value="Delete Account">
-        </form>
-      </div>
 </body>
 </html>
