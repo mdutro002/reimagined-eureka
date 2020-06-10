@@ -98,7 +98,7 @@ router.get('/edit/:id', isAuthenticated, (req, res) => {
 
 })
 
-//DELETE REQUESTS
+//DELETE REQUESTS -- NOTE: Nonfunctioning! The only way to delete your campaigns is by deleting your account. ¯\_(ツ)_/¯
 router.delete('campaigns/delete', (req, res) => {
   Campaigns.findByIdAndDelete(req.body.id, (err, deleted) => {
     if (err){
