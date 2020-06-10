@@ -8,10 +8,25 @@
   <div class="viewCampaign">
   <h2>Campaign: <%=thisCampaign.nickName%></h2>
     <div id="campaignDetails">
-        <img src="<%=thisCampaign.imgUrl%>">
-        <a href="/campaign/edit/<%=thisCampaign._id%>"><button>Edit</button></a>
+      <img src="<%=thisCampaign.imgUrl%>">
+      <% if (thisCampaign.chars[0].length){
+        %>
+        <p>Characters:</p>
+        <ul>
+        <% for (char in thisCampaign.chars){
+          %><li><%=thisCampaign.chars[char]%></li><%
+        }%>
+        </ul>
+        <%
+      }%>
     </div>
-    <form href="/campaign/delete/<%=thisCampaign._id%>?_method=DELETE"><button type="submit">Delete Campaign</button></form>
+    <div id="buttonDiv">
+      <a href="/campaign/edit/<%=thisCampaign._id%>"><button>Edit</button></a>
+      <form action="/campaign/delete?_method=DELETE" method="POST">
+        <input type="hidden" name="id" value="<%=thisCampaign._id%>">
+        <input type="submit" value="Delete Campaign"></input>
+      </form>
+    </div>
   </div>
 </body>
 </html>

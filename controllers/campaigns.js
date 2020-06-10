@@ -99,10 +99,16 @@ router.get('/edit/:id', isAuthenticated, (req, res) => {
 })
 
 //DELETE REQUESTS
-router.delete('/delete/:id', (req, res) => {
-  Campaigns.findByIdAndDelete(req.params.id, (err, deleted) => {
-    res.redirect('/user/myCampaigns')
+router.delete('campaign/delete', (req, res) => {
+  Campaigns.findByIdAndDelete(req.body.id, (err, deleted) => {
+    if (err){
+      console.log(err)
+      res.send(err)
+    } else{
+      res.redirect('/user/myCampaigns')
+    }
   })
 })
+
 
 module.exports = router

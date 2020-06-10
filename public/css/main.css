@@ -189,6 +189,28 @@ a{
   background-color: var(--kombu-green);
   margin: 10px;
   height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.viewCampaign h2{
+}
+
+
+#buttonDiv{
+  display: flex;
+  flex-direction: row;
+}
+
+#buttonDiv input{
+  color: black;
+}
+
+#buttonDiv button{
+  font-family: sans-serif;
+  color: black;
+  margin-right: 10px;
 }
 
 /* PSEUDOCLASSES AND ACTIONS */
