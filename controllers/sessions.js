@@ -10,7 +10,7 @@ sessions.post('/', (req, res) => {
   User.findOne({username: req.body.username}, (err, foundUser) => {
     if (err){
       console.log(err)
-      res.send('ERROR 500 - alert techsupport, there\'s an internal error')
+      res.send('ERROR 500 - alert techsupport, there\'s an internal server error')
     } else if (!foundUser) {
       res.send('<a href="/">Sorry, no user found with that username</a>')
     } else {

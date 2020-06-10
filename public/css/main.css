@@ -74,11 +74,29 @@ a{
   height: 250px;
   margin: 15px;
   color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .campaignDiv img{
   max-width: 100px;
   max-height: 100px;
+  align-self: center;
+}
+
+.campaignDiv a {
+  margin: 0;
+  align-self: center;
+  justify-self: flex-start;
+}
+
+.campaignDiv h4{
+  font-family: sans-serif;
+}
+
+.campaignDiv button{
+  margin: 0;
 }
 
 .formDiv{
@@ -151,9 +169,34 @@ a{
 .displayCampaigns button{
   margin-top: 20px;
   border-radius: 5px;
+  font-family: sans-serif;
 }
 
 #campaignDisplay {
   display: flex;
   flex-wrap: wrap;
+}
+
+#noCamp{
+  justify-self: center;
+  width: 100%;
+  margin-left: 33%;
+}
+
+.viewCampaign{
+  border: solid 1px var(--raisin-black);
+  border-radius: 5px;
+  background-color: var(--kombu-green);
+  margin: 10px;
+  height: 80vh;
+}
+
+/* PSEUDOCLASSES AND ACTIONS */
+nav a:hover{
+  background-color: var(--camel);
+  color: black;
+}
+
+input:focus{
+  outline-color: var(--camel);
 }

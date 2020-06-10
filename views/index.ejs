@@ -7,12 +7,17 @@
   <%- include('./partials/nav.ejs') %>
   <div id="mainCampaigns">
     <!-- Put all campaigns with viewable checked here -->
-  <% for (data in allData){
-    %><div class="campaignDiv">
-      <p><%=allData[data].nickName%></p>
-      <img src="<%=allData[data].imgUrl%>">
-    </div><%
-  }%>
+  <% if (allData == ""){
+    %><h3 id="noCamp">There are no public campaigns!</h3><%
+  } else {
+    for (data in allData){
+      %><div class="campaignDiv">
+        <p><%=allData[data].nickName%></p>
+        <img src="<%=allData[data].imgUrl%>">
+      </div><%
+    }
+  } 
+  %>
   </div>
 </body>
 </html>

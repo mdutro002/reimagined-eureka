@@ -5,8 +5,13 @@
 </head>
 <body>
   <%- include('./partials/nav.ejs') %>
-  <div class="viewCampaignDiv">
-
+  <div class="viewCampaign">
+  <h2>Campaign: <%=thisCampaign.nickName%></h2>
+    <div id="campaignDetails">
+        <img src="<%=thisCampaign.imgUrl%>">
+        <a href="/campaign/edit/<%=thisCampaign._id%>"><button>Edit</button></a>
+    </div>
+    <form href="/campaign/delete/<%=thisCampaign._id%>?_method=DELETE"><button type="submit">Delete Campaign</button></form>
   </div>
 </body>
 </html>

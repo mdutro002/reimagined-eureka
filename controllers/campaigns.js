@@ -74,13 +74,15 @@ router.get('/new', isAuthenticated, (req, res) => {
 })
 
 router.get('/view/:id', isAuthenticated, (req, res) => {
-  res.render('view.ejs', 
-    {
-      thisUser: req.session.currentUser,
-      loggedIn: req.session.currentUser,
-      userCampaign: req.params.id
-    }
-  )
+  Campaigns.findById(req.params.id, (err, thisCampaign) => {
+    res.render('view.ejs',
+      {
+        thisUser: req.session.currentUser,
+        loggedIn: req.session.currentUser,
+        thisCampaign: thisCampaign
+      }
+    )
+  })
 })
 
 router.get('/edit/:id', isAuthenticated, (req, res) => {
