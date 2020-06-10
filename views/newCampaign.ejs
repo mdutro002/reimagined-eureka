@@ -5,8 +5,6 @@
 </head>
 <body>
   <%- include('./partials/nav.ejs') %>
-  <h1>dungeonCore</h1>
-
   <div class="formDiv">
     <form name="addCampaign" action="/campaigns/new/add?_method=POST" method="POST">
       <input type="hidden" name="ownedBy" value="<%=thisUser._id%>">
