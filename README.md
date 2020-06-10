@@ -23,6 +23,7 @@ https://quiet-cove-97838.herokuapp.com/
 - If you try and access a page without auth, you don't get redirected BACK to that page after login
 - Code is not dry, could use more organization
 - On sign up, you are immediately directed to login
+- Login Errors and Successes
 
 ### Feature Expansions
 - Have characters 'owned' like campaigns are owned by users
