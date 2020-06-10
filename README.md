@@ -24,6 +24,10 @@ https://quiet-cove-97838.herokuapp.com/
 - Code is not dry, could use more organization
 - On sign up, you are immediately directed to login
 
+### Feature Expansions
+- Have characters 'owned' like campaigns are owned by users
+- Have campaigns show up in "my Campaigns" if you have a character in that campaign - segment myCampaigns by campaigns you    own vs ones you play
+
 ***
 
 ### Build Notes
