@@ -99,7 +99,7 @@ router.get('/edit/:id', isAuthenticated, (req, res) => {
 })
 
 //DELETE REQUESTS
-router.delete('campaign/delete', (req, res) => {
+router.delete('campaigns/delete', (req, res) => {
   Campaigns.findByIdAndDelete(req.body.id, (err, deleted) => {
     if (err){
       console.log(err)

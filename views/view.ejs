@@ -21,10 +21,10 @@
       }%>
     </div>
     <div id="buttonDiv">
-      <a href="/campaign/edit/<%=thisCampaign._id%>"><button>Edit</button></a>
-      <form action="/campaign/delete?_method=DELETE" method="POST">
+      <a href="/campaigns/edit/<%=thisCampaign._id%>"><button>Edit</button></a>
+      <form method="POST" action="/campaigns/delete?_method=DELETE" >
         <input type="hidden" name="id" value="<%=thisCampaign._id%>">
-        <input type="submit" value="Delete Campaign"></input>
+        <input type="submit" value="Delete">
       </form>
     </div>
   </div>
