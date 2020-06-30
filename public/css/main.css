@@ -210,6 +210,10 @@ a{
   margin-right: 10px;
 }
 
+#campaignDetails{
+  max-width: 500px;
+}
+
 /* PSEUDOCLASSES AND ACTIONS */
 nav a:hover{
   background-color: var(--camel);
