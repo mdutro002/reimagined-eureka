@@ -12,6 +12,7 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 #local OS files
 DS_Store
 *.DS_Store
+*DS_Store
 
 # Runtime data
 pids
