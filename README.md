@@ -34,5 +34,4 @@ https://quiet-cove-97838.herokuapp.com/
 ### Build Notes
 Previously in this section, I had an ongoing build diary where I documented what I had achieved in accordance with my proposed build schedule. I've moved this text to my blog BespokePixels: https://bespokepixels.wordpress.com/
 
-The specific post is 
-(https://bespokepixels.wordpress.com/2020/06/23/lessons-learned-project-retrospective-on-dungeoncore/)[here]
+The specific post is: https://bespokepixels.wordpress.com/2020/06/23/lessons-learned-project-retrospective-on-dungeoncore/
