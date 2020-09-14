@@ -99,6 +99,7 @@ a{
 
 .campaignDiv h4{
   font-family: sans-serif;
+  align-self: center;
 }
 
 .campaignDiv button{
