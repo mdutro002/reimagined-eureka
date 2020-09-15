@@ -10,13 +10,14 @@
   <% if (allData == ""){
     %><h3 id="noCamp">There are no public campaigns!</h3><%
   } else {
-    %><h3 id="noCamp">Recently Created Campaigns:</h3> //just using the same id here to replicate the styling
+    %><h3 id="noCamp">Recently Created Campaigns:</h3>
     <div id="allCampaigns">
     <%
     for (data in allData){
       %>
         <div class="campaignDiv">
         <h4><%=allData[data].nickName%></h4>
+        <h4><%= %></h4>
         <img src="<%=allData[data].imgUrl%>">
       </div><%
     }
