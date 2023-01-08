@@ -2,7 +2,7 @@
 While it's probably also a genre of metal, in this case dungeonCore is a lightweight web app to manage DnD campaigns.
 Use it to track how many sessions you have going, see what characters are in play, and view the maps you're using. 
 
-https://quiet-cove-97838.herokuapp.com/
+~https://quiet-cove-97838.herokuapp.com/~ (Application dead due to Heroku getting rid of their free tier services)
 
 ***
 
